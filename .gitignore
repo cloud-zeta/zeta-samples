@@ -1,0 +1,8 @@
+.p4*
+.DS_Store
+.AppleDouble
+.bash_history
+
+# TypeScript Stuff
+node_modules/
+public/
