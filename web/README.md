@@ -4,7 +4,7 @@
 
 ```bash
 git clone git@github.com:cloud-zeta/zeta-samples.git 
-cd zeta-samples
+cd zeta-samples/web
 npm install
 npm start
 ``` 
