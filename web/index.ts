@@ -1,16 +1,20 @@
-import { ZetaAppConfig, ZetaEngine } from "@cloudzeta/engine";
-import { ZetaScene } from "@cloudzeta/wasm";
+import { ZetaEngine, ZetaEngineCreate, ZetaInit } from "@cloudzeta/engine";
 
-const appConfig: ZetaAppConfig = {
+ZetaInit({
     appId: "1:979343534807:web:91ae6fc214cbf85708de92",
     apiKey: "AIzaSyBBDfxgpOAnH7GJ6RNu0Q_v79OGbVr1V2Q",
-};
+});
 
-ZetaEngine.createEngine(appConfig).then((engine) => {
+const canvasId = "zeta-sample-canvas";
+
+ZetaEngineCreate({
+    canvasId: canvasId,
+    pixelRatio: 1.0,
+}).then((engine: ZetaEngine) => {
     console.log("Engine created successfully");
 
-    engine.onSceneLoaded((scene: ZetaScene) => {
+    engine.onSceneLoaded(() => {
         console.log("Scene loaded successfully");
     });
-    engine.loadScene("lrk8p6fa0enkik1t", "zeta-sample-canvas");
+    engine.loadScene("lt3k51km833tfl3d");
 });
