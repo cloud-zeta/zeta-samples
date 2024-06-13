@@ -3,8 +3,8 @@
 (Working in progress, more details coming soon)
 
 ```bash
-git clone git@github.com:cloud-zeta/zeta-samples.git 
-cd zeta-samples/web
+git clone git@github.com:cloud-zeta/zeta-samples.git
+cd zeta-samples/web/01-hello-zeta
 npm install
 npm start
-``` 
+```

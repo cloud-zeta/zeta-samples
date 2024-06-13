@@ -15,7 +15,11 @@ module.exports = async () => {
                     {
                         from: path.resolve(__dirname, "node_modules/@cloudzeta/wasm"),
                         to: path.join(__dirname, "public/zetaWasm"),
-                    }
+                    },
+                    {
+                        from: path.resolve(__dirname, "node_modules/@cloudzeta/engine/zeta.worker.js"),
+                        to: path.join(__dirname, "public/zetaWorker/"),
+                    },
                 ]
             }),
             new HtmlPlugin({
