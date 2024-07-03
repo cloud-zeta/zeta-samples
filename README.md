@@ -1,10 +1,10 @@
 # Cloud Zeta Samples
 
-This is the main repo for [Cloud Zeta](https://cloudzeta.com), a cloud platform for creators to 
+This is the main repo for [Cloud Zeta](https://cloudzeta.com), a cloud platform for creators to
 manage 3D assets, collaborate on projects, and deliver content from anywhere.
 
 > [!TIP]
-> 
+>
 > Please join our [Discord Server](https://discord.gg/kyTzU2rxYN) for questions, feedback, and tech
 > support.
 
@@ -14,6 +14,22 @@ A Typescript SDK that enables developers to embedded 3D content. See [README.md]
 detailed instructions on how to build and integrate.
 
 ## Python SDK Samples
+
+First, create your `auth token` in the [user settings page](https://cloudzeta.com/settings).
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install cloudzeta-sdk
+
+export ZETA_AUTH_TOKEN_ID="<insert auth toekn ID here...>"
+export ZETA_ENCRYPTION_KEY="<insert encryption key here...>"
+
+cd python/01-upload-assets
+python main.py
+```
+
+## Google Colab Samples
 
 ```python
 from zeta.sdk.ephemeral import EphemeralStage
@@ -32,12 +48,12 @@ edits are synced to Cloud Zeta automatically. Available samples and tutorials ar
 2. Basic OpenUSD (WIP)
 3. TBD...
 
-More samples are coming. We also welcome idea suggestions and collaborations on new samples. Join 
+More samples are coming. We also welcome idea suggestions and collaborations on new samples. Join
 our [discord](https://discord.gg/kyTzU2rxYN) to chat a chat!
 
 > [!NOTE]
 >
-> Samples loaded into Cloud Zeta are ephemeral. When previewing those samples, you are accessing 
+> Samples loaded into Cloud Zeta are ephemeral. When previewing those samples, you are accessing
 > Cloud Zeta anonymously. Your sample data will be deleted after 24 hours.
 >
 > If you want to hold on to the assets you created during the tutorials, just create a free-tier

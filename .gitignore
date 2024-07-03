@@ -6,3 +6,7 @@
 # TypeScript Stuff
 node_modules/
 public/
+
+# Python Stuff
+__pycache__/
+venv/
