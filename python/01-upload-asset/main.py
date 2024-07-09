@@ -1,6 +1,8 @@
 import os
 
-from zeta.sdk.engine import ZetaEngine, ZetaUploadResult
+from zeta.sdk.asset import ZetaAsset, ZetaUploadResult
+from zeta.sdk.engine import ZetaEngine
+
 
 # The auth token and encryption key can be created in the settings page:
 # https://cloudzeta.com/settings/
@@ -19,6 +21,21 @@ def main():
         print("login failed")
         return
 
+    #
+    # Create a ZetaAsset object.
+    #
+    # The asset will be available via the following URL schema:
+    #   https://cloudzeta.com/<owner_name>/<project_name>/asset/main/<asset_path>
+    #
+    # For this particular example:
+    #   https://cloudzeta.com/zeta/ephemerals/asset/main/upload-test-01/box.usdc
+    #
+    # owner_name:   zeta
+    # project_name: ephemerals
+    # asset_path:   upload-test-01/box.usdc
+    #
+    asset: ZetaAsset = engine.asset("zeta", "ephemerals", "upload-test-01/box-18.usdc")
+
     with open("./box.usdc", "rb") as file_data:
         # Upload the asset to the given owner_name and project_name. The server will validate:
         #
@@ -26,20 +43,7 @@ def main():
         #   2. The user has the permission to upload the asset
         #   3. There is no asset with the same name in the project
         #
-        # The uploaded asset will be available via the following URL schema:
-        #   https://cloudzeta.com/<owner_name>/<project_name>/asset/main/<asset_path>
-        #
-        # For this particular example:
-        #   https://cloudzeta.com/zeta/ephemerals/asset/main/upload-test-01/box.usdc
-        #
-        # owner_name:   zeta
-        # project_name: ephemerals
-        # asset_path:   upload-test-01/box.usdc
-        #
-        result: ZetaUploadResult = engine.upload_asset("zeta",
-                                                       "ephemerals",
-                                                       "upload-test-01/box.usdc",
-                                                       file_data)
+        result: ZetaUploadResult = asset.upload(file_data)
         print(f"upload result: {result}")
 
 
