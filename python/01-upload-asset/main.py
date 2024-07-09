@@ -34,7 +34,7 @@ def main():
     # project_name: ephemerals
     # asset_path:   upload-test-01/box.usdc
     #
-    asset: ZetaAsset = engine.asset("zeta", "ephemerals", "upload-test-01/box-18.usdc")
+    asset: ZetaAsset = engine.asset("zeta", "ephemerals", "upload-test-01/box.usdc")
 
     with open("./box.usdc", "rb") as file_data:
         # Upload the asset to the given owner_name and project_name. The server will validate:
