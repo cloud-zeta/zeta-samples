@@ -29,6 +29,11 @@ cd python/01-upload-assets
 python main.py
 ```
 
+> [!NOTE]
+>
+>   The Python SDK supports Linux for the time being. Let us know your use cases for other
+>   platforms in our [#feedback](https://discord.gg/fTm52c2Rfm) discord channel.
+
 ## Google Colab Samples
 
 ```python
