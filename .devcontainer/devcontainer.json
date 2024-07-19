@@ -1,0 +1,21 @@
+{
+    "name": "zeta-samples",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "zeta-samples",
+    "remoteUser": "dev",
+    "shutdownAction": "none",
+    "workspaceFolder": "/zeta/samples",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "animallogic.vscode-usda-syntax",
+                "ms-azuretools.vscode-docker",
+                "ms-python.python",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.cpptools-themes",
+                "ms-vscode.vscode-typescript-tslint-plugin"
+            ]
+        }
+    }
+}

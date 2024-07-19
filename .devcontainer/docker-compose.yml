@@ -1,0 +1,11 @@
+services:
+  zeta-samples:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    init: true
+    volumes:
+      - ..:/zeta/samples
+      - /etc/localtime:/usr/share/zoneinfo/hostlocaltime
+      - ~/.ssh:/home/dev/.ssh
+    command: sleep infinity

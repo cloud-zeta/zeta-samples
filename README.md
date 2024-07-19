@@ -1,12 +1,57 @@
 # Cloud Zeta Samples
 
-This is the main repo for [Cloud Zeta](https://cloudzeta.com), a cloud platform for creators to
+This is the sample repo for [Cloud Zeta](https://cloudzeta.com), a cloud platform for creators to
 manage 3D assets, collaborate on projects, and deliver content from anywhere.
 
 > [!TIP]
 >
 > Please join our [Discord Server](https://discord.gg/kyTzU2rxYN) for questions, feedback, and tech
 > support.
+
+## Setup Development Environment (optional)
+
+<a name="docker"></a>
+### Install Docker
+
+Before you begin, make sure [Docker is installed](https://docs.docker.com/get-docker/). This allows
+developers to use the same setup on Windows, macOS and Linux.
+
+### Windows
+
+The recommended setup is to run Docker Desktop on Windows and use
+[WSL2 as the backend](https://docs.docker.com/desktop/windows/wsl/).
+
+> [!NOTE]
+> Do not install VS Code in WSL using `apt-get`. Instead, follow the [VS Code WSL Tutorial](
+> https://code.visualstudio.com/docs/remote/wsl-tutorial).
+>
+> Once done, `code` command in WSL will open the VS Code in Windows.
+
+### macOS
+
+Just follow the official instruction:
+[Install Docker Desktop on Mac](https://docs.docker.com/desktop/install/mac-install/). When running
+on macOS, you can use arm-based Ubuntu VM, there is NO need to use `Rosetta`.
+
+### Get started with VS Code
+```bash
+git clone git@github.com:cloud-zeta/zeta-samples.git
+code zeta-samples
+```
+
+### Open DevContainer
+
+![Dev Containers: Reopen in Container](assets/devcontainer.png)
+
+When you open the VS Code workspace for the first time, VS Code will automatically prompt you
+to Re-open in the container. VS Code will build the container and setup the environment for you.
+You can also use the VS code's `Dev Containers: Reopen in Container` command to manually open the
+dev cotnainer.
+
+The first time running this will take some time.
+
+See [Developing inside a Container](https://code.visualstudio.com/docs/devcontainers/containers)
+for more context about DevContainers.
 
 ## Web SDK Samples
 
