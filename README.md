@@ -30,8 +30,13 @@ The recommended setup is to run Docker Desktop on Windows and use
 ### macOS
 
 Just follow the official instruction:
-[Install Docker Desktop on Mac](https://docs.docker.com/desktop/install/mac-install/). When running
-on macOS, you can use arm-based Ubuntu VM, there is NO need to use `Rosetta`.
+[Install Docker Desktop on Mac](https://docs.docker.com/desktop/install/mac-install/). For Apple
+silicon, Rosetta 2 is needed to run the X86-based container. To install Rosetta 2 manually from the
+command line, run the following command:
+
+```bash
+softwareupdate --install-rosetta
+```
 
 ### Get started with VS Code
 ```bash
