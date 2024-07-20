@@ -1,11 +1,11 @@
 {
     "name": "@cloudzeta/samples",
-    "version": "0.3.0",
+    "version": "0.6.49",
     "description": "Cloud Zeta SDK Samples",
     "author": "Jiwen 'Steve' Cai <steve@cloudzeta.com>",
     "dependencies": {
-        "@cloudzeta/engine": "^0.3.69",
-        "@cloudzeta/wasm": "^0.3.69"
+        "@cloudzeta/engine": "^0.6.49",
+        "@cloudzeta/wasm": "^0.6.49"
     },
     "devDependencies": {
         "copy-webpack-plugin": "^12.0.2",
