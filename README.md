@@ -113,3 +113,8 @@ our [discord](https://discord.gg/kyTzU2rxYN) to chat a chat!
 >
 > If you want to hold on to the assets you created during the tutorials, just create a free-tier
 > account [here](https://cloudzeta.com/login).
+
+## Test Assets
+
+- [glTF Sample Models](https://github.com/KhronosGroup/glTF-Sample-Models)
+- [Apple AR Quick Look Examples](https://developer.apple.com/augmented-reality/quick-look)
