@@ -18,13 +18,13 @@ def upload_usdc_asset(engine: ZetaEngine):
       https://cloudzeta.com/<owner_name>/<project_name>/asset/main/<asset_path>
 
     For this particular example:
-      https://cloudzeta.com/zeta/ephemerals/asset/main/upload-test-01/box.usdc
+      https://cloudzeta.com/zeta/ephemerals/asset/main/upload-test-usdc-01/box.usdc
 
     owner_name:   zeta
     project_name: ephemerals
-    asset_path:   upload-test-01/box.usdc
+    asset_path:   upload-test-usdc-01/box.usdc
     """
-    asset: ZetaAsset = engine.asset("zeta", "ephemerals", "upload-test-usdc-01/box.usdc")
+    asset: ZetaAsset = engine.asset("zeta", "ephemerals", "upload-test-usdc-12/box.usdc")
 
     with open("./box.usdc", "rb") as file_data:
         # Upload the asset to the given owner_name and project_name. The server will validate:
@@ -38,6 +38,9 @@ def upload_usdc_asset(engine: ZetaEngine):
 
     result: ZetaUploadResult = asset.create_session()
     print(f"create session result: {result}")
+    print(f"asset URL: {result.asset_url}")
+    print(f"edtior URL: {result.editor_url}")
+    print(f"player upload result: {result.player_url}")
 
 
 def upload_obj_asset(engine: ZetaEngine):
@@ -64,6 +67,9 @@ def upload_obj_asset(engine: ZetaEngine):
     result = obj_asset.create_session()
 
     print(f"create session result: {result}")
+    print(f"asset URL: {result.asset_url}")
+    print(f"edtior URL: {result.editor_url}")
+    print(f"player upload result: {result.player_url}")
 
 
 def upload_fbx_asset(engine: ZetaEngine):
@@ -87,6 +93,9 @@ def upload_fbx_asset(engine: ZetaEngine):
     result = fbx_asset.create_session()
 
     print(f"create session result: {result}")
+    print(f"asset URL: {result.asset_url}")
+    print(f"edtior URL: {result.editor_url}")
+    print(f"player upload result: {result.player_url}")
 
 
 def upload_gltf_asset(engine: ZetaEngine):
@@ -110,6 +119,9 @@ def upload_gltf_asset(engine: ZetaEngine):
     result = gltf_asset.create_session()
 
     print(f"create session result: {result}")
+    print(f"asset URL: {result.asset_url}")
+    print(f"edtior URL: {result.editor_url}")
+    print(f"player upload result: {result.player_url}")
 
 
 def main():
@@ -119,16 +131,16 @@ def main():
         print("missing ZETA_AUTH_TOKEN_ID or ZETA_ENCRYPTION_KEY")
         return
 
-    res = engine.login(TOKEN_ID, ENCRYPTION_KEY)
-    if not res:
+    result = engine.login(TOKEN_ID, ENCRYPTION_KEY)
+    if not result:
         print("login failed")
         return
 
     # Uncomment the following line to run the different examples.
     # upload_fbx_asset(engine)
-    upload_gltf_asset(engine)
+    # upload_gltf_asset(engine)
     # upload_obj_asset(engine)
-    # upload_usdc_asset(engine)
+    upload_usdc_asset(engine)
 
 
 if __name__ == "__main__":
