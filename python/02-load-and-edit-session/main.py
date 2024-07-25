@@ -3,7 +3,6 @@ import os
 from pxr import Gf, Usd, UsdGeom
 from zeta.sdk.db import ZetaSession
 from zeta.sdk.engine import ZetaEngine
-from zeta.sdk.uid import generate_uid
 
 
 # The auth token and encryption key can be created in the settings page:
@@ -23,8 +22,7 @@ def main():
         return
 
     s1 = ZetaSession.get_by_uid(TEST_SESSION_UID)
-    workspace: str = f"/tmp/{generate_uid()}"
-    stage: Usd.Stage = s1.load_stage(workspace)
+    stage: Usd.Stage = s1.load_stage()
 
     # Add a new transform operation
     p2: Usd.Prim = stage.GetPrimAtPath("/BoxAnimated/Geom/node_0/node_1/node_2")
