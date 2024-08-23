@@ -60,8 +60,13 @@ for more context about DevContainers.
 
 ## Web SDK Samples
 
-A Typescript SDK that enables developers to embedded 3D content. See [README.md](web/README.md) for
-detailed instructions on how to build and integrate.
+A Typescript SDK that enables developers to embedded 3D content.
+
+1. [Hello Zeta](./web/01-hello-zeta/): A pure Javascript sample. It uses webpack for dev server,
+but the Webpack dependency is completely optional.
+
+2. [Hello Zeta Typescript](./web/02-hello-zeta-ts/): A more complex sample to use Zeta SDK with
+Typescript and Webpack.
 
 ## Python SDK Samples
 

@@ -1,33 +1,47 @@
 const path = require("path")
 const CopyPlugin = require("copy-webpack-plugin")
+const HtmlPlugin = require("html-webpack-plugin")
 
 module.exports = async () => {
     return {
-        entry: "./index.js",
+        entry: "./index.ts",
         output: {
-            // Note the public path is not really needed for this example.
             path: path.resolve(__dirname, "public"),
-            filename: "not-used.js",
+            filename: "index.js",
         },
-
         plugins: [
             new CopyPlugin({
                 patterns: [
                     {
-                        from: path.resolve(__dirname, "index.*"),
-                        to: path.join(__dirname, "public/index[ext]"),
-                    },
-                    {
-                        from: path.resolve(__dirname, "node_modules/@cloudzeta/engine"),
-                        to: path.join(__dirname, "public/zetaEngine"),
-                    },
-                    {
                         from: path.resolve(__dirname, "node_modules/@cloudzeta/wasm"),
                         to: path.join(__dirname, "public/zetaWasm"),
                     },
+                    {
+                        from: path.resolve(__dirname, "node_modules/@cloudzeta/engine/zeta.worker.js"),
+                        to: path.join(__dirname, "public/zetaWorker/"),
+                    },
                 ]
             }),
+            new HtmlPlugin({
+                template: path.resolve(__dirname, "index.html"),
+            }),
         ],
+
+        resolve: {
+            extensions: [".js", ".ts"],
+        },
+
+        module: {
+            rules: [
+                {
+                    test: /\.(ts)$/,
+                    exclude: /node_modules/,
+                    use: [
+                        "ts-loader",
+                    ]
+                },
+            ]
+        },
 
         devServer: {
             compress: true,
