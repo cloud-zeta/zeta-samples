@@ -20,5 +20,8 @@ ZetaEngine.ZetaEngineCreate({
     engine.onSceneLoaded(() => {
         console.log("Scene loaded successfully");
     });
+
+    // Load a scene from Cloud Zeta, the same scene can be viewed at:
+    // https://cloudzeta.com/player/lt3k51km833tfl3d
     engine.loadScene("lt3k51km833tfl3d");
 });

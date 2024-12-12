@@ -5,7 +5,7 @@ import gradio as gr
 def generate_image():
     iframehtml = f'''
         <iframe id="city-viewer-iframe"
-                src="https://cloudzeta.com/player/m4h0xkj5hql0snaj"
+                src="https://cloudzeta.com/player/lt3k51km833tfl3d"
                 width="100%"
                 height="500px"
                 style="border:none;"

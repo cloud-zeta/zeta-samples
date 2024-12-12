@@ -21,5 +21,8 @@ ZetaEngineCreate({
             composedAsset.setRotateXYZ([30, 45, 90]);
         });
     });
+
+    // Load a scene from Cloud Zeta, the same scene can be viewed at:
+    // https://cloudzeta.com/player/lt3k51km833tfl3d
     engine.loadScene("lt3k51km833tfl3d");
 });
