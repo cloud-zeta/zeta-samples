@@ -10,8 +10,8 @@ from zeta.sdk.engine import ZetaEngine
 TOKEN_ID = os.environ.get("ZETA_AUTH_TOKEN_ID")
 ENCRYPTION_KEY = os.environ.get("ZETA_ENCRYPTION_KEY")
 
-# https://cloudzeta.com/zeta/ephemerals/session/lyur2tqlvqdjhoep/upload-test-usdc-01/box.usdc
-TEST_SESSION_UID = "lyur2tqlvqdjhoep"
+# https://beta.zetabase.ai/zeta/ephemerals/session/m5nf157eax0qj810/upload-test-usdc-01/box.usdc
+TEST_SESSION_UID = "m5nf157eax0qj810"
 
 
 def main():

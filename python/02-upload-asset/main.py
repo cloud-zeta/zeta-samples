@@ -24,7 +24,7 @@ def upload_usdc_asset(engine: ZetaEngine):
     project_name: ephemerals
     asset_path:   upload-test-usdc-01/box.usdc
     """
-    asset: ZetaAsset = engine.asset("zeta", "ephemerals", "upload-test-usdc-12/box.usdc")
+    asset: ZetaAsset = engine.asset("zeta", "ephemerals", "upload-test-usdc-01/box.usdc")
 
     with open("./box.usdc", "rb") as file_data:
         # Upload the asset to the given owner_name and project_name. The server will validate:
