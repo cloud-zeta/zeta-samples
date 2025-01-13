@@ -1,16 +1,14 @@
-import { ZetaEngine, ZetaEngineCreate, ZetaInit } from "@cloudzeta/engine";
+import { ZetaEngine, ZetaEngineInit } from "@cloudzeta/engine";
 
-ZetaInit({
-    appId: "1:979343534807:web:91ae6fc214cbf85708de92",
-    apiKey: "AIzaSyBBDfxgpOAnH7GJ6RNu0Q_v79OGbVr1V2Q",
-});
+async function runZeta() {
+    const canvasId = "zeta-sample-canvas";
 
-const canvasId = "zeta-sample-canvas";
+    const engine: ZetaEngine = await ZetaEngineInit({
+        canvasId: canvasId,
+        pixelRatio: 1.0,
+        zetaUrlPrefix: "https://beta.zetabase.ai"
+    });
 
-ZetaEngineCreate({
-    canvasId: canvasId,
-    pixelRatio: 1.0,
-}).then((engine: ZetaEngine) => {
     console.log("Engine created successfully");
 
     engine.onSceneLoaded(() => {
@@ -18,6 +16,8 @@ ZetaEngineCreate({
     });
 
     // Load a scene from Cloud Zeta, the same scene can be viewed at:
-    // https://cloudzeta.com/player/lt3k51km833tfl3d
-    engine.loadScene("lt3k51km833tfl3d");
-});
+    // https://beta.zetabase.ai/player/m5vb8zahjcxf035x
+    engine.loadScene("m5vb8zahjcxf035x");
+}
+
+runZeta();

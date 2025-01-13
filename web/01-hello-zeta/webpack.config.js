@@ -14,7 +14,7 @@ module.exports = async () => {
             new CopyPlugin({
                 patterns: [
                     {
-                        from: path.resolve(__dirname, "index.*"),
+                        from: path.resolve(__dirname, "index.(html|js)"),
                         to: path.join(__dirname, "public/index[ext]"),
                     },
                     {
@@ -31,11 +31,11 @@ module.exports = async () => {
 
         devServer: {
             compress: true,
-            port: 8848,
+            port: 8080,
 
             onBeforeSetupMiddleware: function (devServer) {
                 devServer.app.get("*", (req, res, next) => {
-                    res.setHeader("Cross-Origin-Embedder-Policy", "credentialless");
+                    res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
                     res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
                     res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
                     res.setHeader("Access-Control-Allow-Origin", "*");

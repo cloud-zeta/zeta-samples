@@ -1,28 +1,28 @@
-import { ComposedAsset, ZetaEngineBeta, ZetaEngineCreate, ZetaInit } from "@cloudzeta/engine";
+import { ComposedAsset, ZetaEngineBeta, ZetaEngineInit } from "@cloudzeta/engine";
 
-ZetaInit({
-    appId: "1:979343534807:web:91ae6fc214cbf85708de92",
-    apiKey: "AIzaSyBBDfxgpOAnH7GJ6RNu0Q_v79OGbVr1V2Q",
-});
+async function runZeta() {
+    const canvasId = "zeta-sample-canvas";
 
-const canvasId = "zeta-sample-canvas";
+    const engine: ZetaEngineBeta = await ZetaEngineInit({
+        canvasId: canvasId,
+        pixelRatio: 1.0,
+        zetaUrlPrefix: "https://beta.zetabase.ai"
+    }) as ZetaEngineBeta;
 
-ZetaEngineCreate({
-    canvasId: canvasId,
-    pixelRatio: 1.0,
-}).then((engine: ZetaEngineBeta) => {
     console.log("Engine created successfully");
 
     engine.onSceneLoaded(() => {
         console.log("Scene loaded successfully");
 
-        engine.composeScene("/z", "/zeta-letter.usd").then((composedAsset: ComposedAsset) => {
-            composedAsset.setTranslate([1, -2, 6]);
-            composedAsset.setRotateXYZ([30, 45, 90]);
+        engine.composeScene("/z", "/zeta-logo.usd").then(async (composedAsset: ComposedAsset) => {
+            await composedAsset.setTranslate([0, 100, -100]);
+            await composedAsset.setRotateXYZ([0, 0, 0]);
         });
     });
 
     // Load a scene from Cloud Zeta, the same scene can be viewed at:
-    // https://cloudzeta.com/player/lt3k51km833tfl3d
-    engine.loadScene("lt3k51km833tfl3d");
-});
+    // https://beta.zetabase.ai/player/m5vb8zahjcxf035x
+    engine.loadScene("m5vb8zahjcxf035x");
+}
+
+runZeta();
