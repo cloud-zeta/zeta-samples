@@ -1,11 +1,9 @@
 {
     "name": "@cloudzeta/samples",
-    "version": "0.10.49",
-    "description": "Cloud Zeta SDK Samples",
-    "author": "Jiwen 'Steve' Cai <steve@cloudzeta.com>",
+    "private": true,
     "dependencies": {
-        "@cloudzeta/engine": "^0.10.49",
-        "@cloudzeta/wasm": "^0.10.49",
+        "@cloudzeta/engine": "^0.10.53",
+        "@cloudzeta/wasm": "^0.10.53",
         "@headlessui/react": "^2.2.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
