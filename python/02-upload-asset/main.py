@@ -124,6 +124,16 @@ def upload_gltf_asset(engine: ZetaEngine):
     print(f"player upload result: {result.player_url}")
 
 
+def get_signed_url(engine: ZetaEngine):
+    asset = engine.asset("zeta", "ephemerals", "upload-test-usdc-01/box.usdc")
+    result: ZetaUploadResult = asset.get_signed_url(overwrite=False)
+
+    if result.status == ZetaUploadResult.Status.PENDING:
+        print(f"get signed url result: {result.signed_url}")
+    else:
+        print(f"get signed url result: {result.status}, error: {result.error}")
+
+
 def main():
     engine = ZetaEngine()
 
@@ -141,7 +151,7 @@ def main():
     # upload_gltf_asset(engine)
     # upload_obj_asset(engine)
     upload_usdc_asset(engine)
-
+    get_signed_url(engine)
 
 if __name__ == "__main__":
     main()

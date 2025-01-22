@@ -1,1 +1,1 @@
-cloudzeta-sdk==0.7.53
+cloudzeta-sdk==0.10.147
