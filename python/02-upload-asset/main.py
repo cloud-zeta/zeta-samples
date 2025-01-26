@@ -126,7 +126,7 @@ def upload_gltf_asset(engine: ZetaEngine):
 
 def get_signed_url(engine: ZetaEngine):
     asset = engine.asset("zeta", "ephemerals", "upload-test-usdc-01/box.usdc")
-    result: ZetaUploadResult = asset.get_signed_url(overwrite=False)
+    result: ZetaUploadResult = asset.get_signed_url(overwrite=True)
 
     if result.status == ZetaUploadResult.Status.PENDING:
         print(f"get signed url result: {result.signed_url}")
@@ -146,12 +146,14 @@ def main():
         print("login failed")
         return
 
+    # Demos how to get a signed URL for a file upload.
+    get_signed_url(engine)
+
     # Uncomment the following line to run the different examples.
     # upload_fbx_asset(engine)
     # upload_gltf_asset(engine)
     # upload_obj_asset(engine)
     upload_usdc_asset(engine)
-    get_signed_url(engine)
 
 if __name__ == "__main__":
     main()
