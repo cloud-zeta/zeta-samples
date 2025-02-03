@@ -2,8 +2,8 @@
     "name": "@cloudzeta/samples",
     "private": true,
     "dependencies": {
-        "@cloudzeta/engine": "^0.10.171",
-        "@cloudzeta/wasm": "^0.10.171",
+        "@cloudzeta/engine": "^0.10.238",
+        "@cloudzeta/wasm": "^0.10.238",
         "@headlessui/react": "^2.2.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
