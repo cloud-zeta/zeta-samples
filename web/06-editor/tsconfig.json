@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "outDir": "./public/",
+        "noImplicitAny": false,
+        "module": "es6",
+        "moduleResolution": "node",
+        "target": "es6",
+        "baseUrl": "./"
+    }
+}
