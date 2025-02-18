@@ -13,12 +13,12 @@ module.exports = async () => {
             new CopyPlugin({
                 patterns: [
                     {
-                        from: path.resolve(__dirname, "node_modules/@cloudzeta/wasm"),
-                        to: path.join(__dirname, "public/zetaWasm"),
+                        from: path.resolve(__dirname, "node_modules/@cloudzeta/sdk/zeta.worker.js"),
+                        to: path.join(__dirname, "public/zetaSdk/"),
                     },
                     {
-                        from: path.resolve(__dirname, "node_modules/@cloudzeta/engine/zeta.worker.js"),
-                        to: path.join(__dirname, "public/zetaEngine/"),
+                        from: path.resolve(__dirname, "node_modules/@cloudzeta/wasm"),
+                        to: path.join(__dirname, "public/zetaWasm/"),
                     },
                 ]
             }),

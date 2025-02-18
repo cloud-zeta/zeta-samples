@@ -18,12 +18,12 @@ module.exports = async () => {
                         to: path.join(__dirname, "public/index[ext]"),
                     },
                     {
-                        from: path.resolve(__dirname, "node_modules/@cloudzeta/engine"),
-                        to: path.join(__dirname, "public/zetaEngine"),
+                        from: path.resolve(__dirname, "node_modules/@cloudzeta/sdk"),
+                        to: path.join(__dirname, "public/zetaSdk/"),
                     },
                     {
                         from: path.resolve(__dirname, "node_modules/@cloudzeta/wasm"),
-                        to: path.join(__dirname, "public/zetaWasm"),
+                        to: path.join(__dirname, "public/zetaWasm/"),
                     },
                 ]
             }),

@@ -1,4 +1,4 @@
-import { ZetaEngine, ZetaEngineInit } from "@cloudzeta/engine";
+import { ZetaEngine, ZetaEngineInit } from "@cloudzeta/sdk/engine";
 
 async function runZeta() {
     const canvasId = "zeta-sample-canvas";
@@ -6,7 +6,7 @@ async function runZeta() {
     const engine: ZetaEngine = await ZetaEngineInit({
         canvasId: canvasId,
         pixelRatio: 1.0,
-        zetaUrlPrefix: "https://beta.zetabase.ai"
+        zetaUrlPrefix: "https://beta.zetabase.ai",
     });
 
     console.log("Engine created successfully");

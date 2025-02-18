@@ -1,7 +1,7 @@
 async function runZeta() {
     const canvasId = "zeta-sample-canvas";
 
-    const engine = await ZetaEngine.ZetaEngineInit({
+    const engine = await ZetaSDK.ZetaEngineInit({
         canvasId: canvasId,
         pixelRatio: 1.0,
         zetaUrlPrefix: "https://beta.zetabase.ai",
