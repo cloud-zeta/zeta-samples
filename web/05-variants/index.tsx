@@ -3,7 +3,7 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 
 
-import { ZetaEngineBeta, ZetaEngineInit } from "@cloudzeta/engine";
+import { ZetaEngineBeta, ZetaEngineInit } from "@cloudzeta/sdk/engine";
 import { UsdPrim, UsdStage, UsdVariantSet, UsdVariantSets } from "@cloudzeta/wasm";
 
 const UsdVariantsDemo: React.FC = () => {
@@ -58,7 +58,7 @@ const UsdVariantsDemo: React.FC = () => {
             const engine: ZetaEngineBeta = await ZetaEngineInit({
                 canvasId: canvasId,
                 pixelRatio: 1.0,
-                zetaUrlPrefix: "https://beta.zetabase.ai"
+                zetaUrlPrefix: "https://beta.zetabase.ai",
             }) as ZetaEngineBeta;
 
             console.log("Engine created successfully");
