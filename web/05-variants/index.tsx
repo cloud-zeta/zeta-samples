@@ -3,7 +3,7 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 
 
-import { ZetaEngineBeta, ZetaEngineInit } from "@cloudzeta/sdk/engine";
+import { ZetaEngineBeta, ZetaEngineInit } from "@cloudzeta/sdk/core";
 import { UsdPrim, UsdStage, UsdVariantSet, UsdVariantSets } from "@cloudzeta/wasm";
 
 const UsdVariantsDemo: React.FC = () => {

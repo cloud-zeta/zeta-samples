@@ -1,4 +1,4 @@
-import { ZetaEngineBeta, ZetaEngineInitWithToken } from "@cloudzeta/sdk/engine";
+import { ZetaEngineBeta, ZetaEngineInitWithToken } from "@cloudzeta/sdk/core";
 
 async function runZeta() {
     const canvasId = "zeta-sample-canvas";
