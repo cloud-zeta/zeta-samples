@@ -2,8 +2,8 @@
     "name": "@cloudzeta/samples",
     "private": true,
     "dependencies": {
-        "@cloudzeta/sdk": "^0.10.368",
-        "@cloudzeta/wasm": "^0.10.368"
+        "@cloudzeta/sdk": "^0.10.384",
+        "@cloudzeta/wasm": "^0.10.384"
     },
     "devDependencies": {
         "copy-webpack-plugin": "^12.0.2",
