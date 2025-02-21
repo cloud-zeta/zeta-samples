@@ -4,26 +4,23 @@ let zetaGui: ZetaGui = null;
 const uiDivFull = document.getElementById("zeta-sample-ui-div-full") as HTMLDivElement;
 const uiDivMini = document.getElementById("zeta-sample-ui-div-mini") as HTMLDivElement;
 
-async function runZeta(root: HTMLDivElement) {
-    zetaGui = await ZetaGui.init(root, {
+async function initZeta() {
+    zetaGui = await ZetaGui.init(uiDivFull, {
         zetaUrlPrefix: "https://beta.zetabase.ai",
+        pixelRatio: 1.0,
     });
 
-    if (!zetaGui.engine) {
-        throw new Error("Failed to initialize Zeta engine");
-    }
-
     if (!zetaGui.engine.scene) {
-        zetaGui.engine.loadScene("m5vb8zahjcxf035x");
+        await zetaGui.loadScene("m5vb8zahjcxf035x");
     }
-
-    zetaGui.mountInto(root);
 }
 
+initZeta();
+
 document.getElementById("zeta-sample-ui-switch-button-full").addEventListener("click", () => {
-    runZeta(uiDivFull);
+    zetaGui.mountInto(uiDivFull);
 });
 
 document.getElementById("zeta-sample-ui-switch-button-mini").addEventListener("click", () => {
-    runZeta(uiDivMini);
+    zetaGui.mountInto(uiDivMini);
 });
