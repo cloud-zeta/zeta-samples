@@ -3,6 +3,8 @@ import { ZetaGui } from "@cloudzeta/sdk/gui";
 let zetaGui: ZetaGui = null;
 const uiDivFull = document.getElementById("zeta-sample-ui-div-full") as HTMLDivElement;
 const uiDivMini = document.getElementById("zeta-sample-ui-div-mini") as HTMLDivElement;
+const boxSceneUid = "m7gxcsdlkbixvfxt";
+const logoSceneUid = "m5vb8zahjcxf035x";
 
 async function initZeta() {
     zetaGui = await ZetaGui.init(uiDivFull, {
@@ -11,16 +13,28 @@ async function initZeta() {
     });
 
     if (!zetaGui.engine.scene) {
-        await zetaGui.loadScene("m5vb8zahjcxf035x");
+        await zetaGui.loadScene(boxSceneUid);
     }
 }
 
 initZeta();
 
-document.getElementById("zeta-sample-ui-switch-button-full").addEventListener("click", () => {
+document.getElementById("zeta-sample-ui-button-load-box").addEventListener("click", () => {
+    zetaGui.loadScene(boxSceneUid);
+});
+
+document.getElementById("zeta-sample-ui-button-load-logo").addEventListener("click", () => {
+    zetaGui.loadScene(logoSceneUid);
+});
+
+document.getElementById("zeta-sample-ui-button-unload").addEventListener("click", () => {
+    zetaGui.unloadScene();
+});
+
+document.getElementById("zeta-sample-ui-button-full-screen").addEventListener("click", () => {
     zetaGui.mountInto(uiDivFull);
 });
 
-document.getElementById("zeta-sample-ui-switch-button-mini").addEventListener("click", () => {
+document.getElementById("zeta-sample-ui-button-mini-screen").addEventListener("click", () => {
     zetaGui.mountInto(uiDivMini);
 });
